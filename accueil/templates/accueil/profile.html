@@ -1,0 +1,17 @@
+{% extends 'accueil/base.html' %}
+
+{% block content %}
+    <div class="content1">
+        <h2>{{ user_profile.user.username }}</h2>
+		<p>Avatar :</p>
+		</p><img src="{{ user_profile.profile_pic_url }}" /></p>
+		<p>Age : {{ user_profile.age }}</p>
+		<p>Description : {{ user_profile.description }}</p>
+		<p>Numéro : {{ user_profile.numero }}</p>
+		<p>Profession : {{ user_profile.profession }}</p>
+		
+
+		<p><a href="/edit_profile">Editer votre profil</a></p>
+		
+    </div>
+{% endblock %}
