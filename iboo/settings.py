@@ -25,7 +25,7 @@ SECRET_KEY = '8x$1mj9zvpkjwxz1&&xd%zjr84+rvi!ilip*2ws!1-=p-nvdng'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = []
 
 
 # Application definition
