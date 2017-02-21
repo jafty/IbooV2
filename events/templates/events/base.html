@@ -8,7 +8,7 @@
         <meta charset="utf-8" />
 
         <title>Iboo : Trouvez une soirée en un clic</title>
-		<link rel="stylesheet" type="text/css" href="{% static 'events/style.css' %}" />
+		<link rel="stylesheet" type="text/css" href="{% static 'accueil/style.css' %}" />
     </head>
 
 
@@ -25,12 +25,23 @@
 			 <div id="menu">
 
 					 <ul>
+						
 
-						 <li><a href="/">Accueil</a></li>
+				
 
-						 <!-- <li><a href="/events">Evènements</a></li> -->
+						{% if user.is_authenticated %}
+							<li><a href="/events">Evènements</a></li> 
 
-						 <li><a href="/register">Inscription</a></li> 
+							<li><a href="/profile">Profil</a></li> 
+							
+							<li><a href="/logout">Déconnexion</a></li>
+							
+							<li><a href="/events/messagerie">Messagerie</a></li>
+						{% else %}
+							<li><a href="/register">Inscription</a></li> 
+						 
+							<li><a href="/login">Connexion</a></li> 
+						{% endif %}
 
 					 </ul>
 

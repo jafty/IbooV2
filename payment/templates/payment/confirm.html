@@ -1,8 +1,9 @@
 {% extends 'accueil/base.html' %}
 
 {% block content %}
-<div class="bulle">
+<div class='bulle'>
     <p>Vous êtes désormais inscrit. A très bientôt ! </p>
+	<p>Adresse : {{ event.address }}</p>
 	<p><a href="/">Retour à l'accueil</a></p>
 </div>
 {% endblock %}

@@ -1,270 +1,112 @@
-
-html, body {
-height: 100%;
-width: 100%;
-position:relative;
-
-}
-
+html,
 body {
-
- margin: 0px;
-
- padding: 0px;
-
- background: #ededed;
-
- font-family: 'Arial', sans-serif;
-
- font-size: 13px;
+   margin:0;
+   padding:0;
+   height:100%;
 }
 
-
-h1, h2, h3 {
- margin: 0;
- padding: 0;
+#hero{
+  background-image:url(http://i.imgur.com/Darc8Ad.jpg);
+  background-size:cover;
+  position:relative;
+  height:100vh;
 }
 
-#header-wrapper {
-	
-    height: 100px;
-    margin-bottom: 0px;
-    position: relative;
-    width: 100%;
-    background-color: #130074;
+.header{
+  position:absolute;
+  top:50%;
+  text-align:center;
+  width:100%;
+  color:#fff;
+  font-size:36px;
+  -ms-transform: translate(0,-50%); /* IE 9 */
+    -webkit-transform: translate(0,-50%); /* Safari */
+    transform: translate(0,-50%);  
+
 }
 
-#header-wrapper img {
+.wrapper {
+   min-height:100%;
+   position: relative;
+}
+
+#content{
+  padding:50px 70px;
+  text-align:center;
+  width:80%;
+  margin:0px auto;
+  padding-bottom: 50px;  
+}
+
+#content h2{
+  margin:0px 0px 30px 0px;
+  font-family: 'Raleway', black;
+  font-size: 50px;
+}
+
+#content p{
+  margin-bottom: 50px;
+  font-size: 21px;
+  font-family: 'Open Sans', sans-serif;
+}
+
+#footer{
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: 200px;
-}
+  bottom:0px;
+  height: 50px;
+  width:100%;
+  padding:20px 0px;
+  text-align:center;
+  background-image:url(http://i.imgur.com/2ImJl3d.jpg);
+  background-size:cover;
+  color: #ffffff;
 
-#header-wrapper h1{
- text-indent: -3000px;
-}
-
-
-#menu
-{
-
- float: right;
- vertical-align: middle;
- width: 700px;
- margin-right: 200px;
-
-}
-
-
-#menu ul
-{
-
- float: right;
-
-
- list-style: none;
-
- line-height: normal;
-
-}
-
-
-#menu li
-{
-
- float: left;
-
- margin-left: 10px;
-
-}
-
-
-#menu a
-{
-
- display: block;
-
- padding: 10px 20px;
-
- letter-spacing: 2px;
-
- text-decoration: none;
-
- text-transform: uppercase;
-
- font-family: 'Archivo Narrow', sans-serif;
-
- font-size: 12px;
-
- font-weight: 600;
-
- color: #FFFFFF;
-
-}
-
-.content1
-{
-	overflow: hidden;
-	padding: 50px 0px;
-	background-color: #ecf0f1;
-	border-top: 1px solid #E7E7E7;
-	text-align: center;
-	background-color: #F6CDE6;
-}
-
-.content2
-{
-	overflow: hidden;
-	padding: 50px 0px;
-	background-color: #FFFFFF;
-	border-top: 1px solid #E7E7E7;
-	text-align: center;
-	background-color: #ffe5bc;
-
-}
-
-.content3
-{
-	overflow: hidden;
-	padding: 50px 0px;
-	background-color: #FFFFFF;
-	border-top: 1px solid #E7E7E7;
-	text-align: center;
-	background-color: #DDF9D9;
-
-}
-
-.content1 h2
-{
-	display: block;
-	margin-bottom: 10px;
-	letter-spacing: -1px;
-	font-size: 30px;
-	font-weight: 400;
-	color: #333333;
-}
-
-.content1 p
-{
-	display: block;
-	width: 50%;
-	text-align: justify;
-    margin: auto;
-	margin-bottom: 30px;
-	letter-spacing: -1px;
-	font-size: 20px;
-	font-weight: 400;
-	color: #333333;
-}
-
-.content2 h2
-{
-	display: block;
-	margin-bottom: 10px;
-	letter-spacing: -1px;
-	font-size: 30px;
-	font-weight: 400;
-	
-}
-
-.content2 p
-{
-	display: block;
-	width: 50%;
-	text-align: justify;
-    margin: auto;
-	margin-bottom: 30px;
-	letter-spacing: -1px;
-	font-size: 20px;
-	font-weight: 400;
-
-}
-
-.content3 h2
-{
-	display: block;
-	margin-bottom: 10px;
-	letter-spacing: -1px;
-	font-size: 30px;
-	font-weight: 400;
-	
-}
-
-.content3 p
-{
-	display: block;
-	width: 50%;
-	text-align: justify;
-    margin: auto;
-	margin-bottom: 30px;
-	letter-spacing: -1px;
-	font-size: 20px;
-	font-weight: 400;
-
-}
-
-.content4 h2
-{
-	display: block;
-	margin-bottom: 10px;
-	letter-spacing: -1px;
-	font-size: 30px;
-	font-weight: 400;
-	
-}
-
-.content4 p
-{
-	display: block;
-	width: 50%;
-	text-align: justify;
-    margin: auto;
-	margin-bottom: 30px;
-	letter-spacing: -1px;
-	font-size: 20px;
-	font-weight: 400;
-
-}
-
-.content4 img
-{
-	
-	display: block;
-	margin-left: auto;
-    margin-right: auto;
-	margin-top: 60px;
   
 }
 
-.content4
-{
-	overflow: hidden;
-	padding: 50px 0px;
-	background-color: #FFFFFF;
-	border-top: 1px solid #E7E7E7;
-	text-align: center;
-	background-color: #ADD9FE;
+#logo {
+    display: inline-block;
+    vertical-align: top;
+    float: left;
+    margin-top: 15px;    /* if you want it vertically middle of the navbar. */
+}
 
+#nav {
+width: 100%;
+background-color: #000000;
+height: 57px;
+background-repeat: repeat;
+}
+#nav ul{
+  float:right;
+  list-style:none;
+  width:60%;
+}
+
+#nav .wrap-nav{
+  height: 45px; 
+  background: #333333;
 }
 
 
-.beta
-{
-    
-    width:100%;
-	background-color: #000000;
-	bottom:0;
-    position:fixed;
-    
-	
-  color: #ffffff;
-}
-
-#banner
-{
-	max-width: 100%;
+#nav ul li{
+  float:right;
+  list-style:none;
+  margin-right:50px;
 }
 
 
+#nav ul li a{
+  text-decoration: none;
+  font-size: 14px;
+  line-height: 16px;
+  color: #FFFFFF;
+  display: block;
+  padding: 7px 10px;
+  margin-bottom: 1px;
+  z-index: 3;
+  position: relative;
+  text-transform: uppercase;
+  font-family: Arial, Helvetica, sans-serif;
+}
 

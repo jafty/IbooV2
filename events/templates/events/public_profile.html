@@ -1,0 +1,28 @@
+{% extends 'accueil/base.html' %}
+{% block content %}
+
+        <h2>{{ profile.user.username }}</h2>
+		<p>Avatar :</p>
+		</p><img src="{{ profile.profile_pic_url }}" /></p>
+		<p>Age : {{ profile.age }}</p>
+		<p>Description : {{ profile.description }}</p>
+		<p>Numéro : {{ profile.numero }}</p>
+		<p>Profession : {{ profile.profession }}</p>
+		
+		<p><b>Evènements auxquels {{ profile.user.username }} a participé : </b></p>
+		{% for list in list_p %}
+			<div class="event_list_el">
+				<p><a href="{% url 'event_detail' pk=list.event.pk %}" width="300">{{ list.event.title }}</a></p>
+			</div>
+		{% endfor %}
+		
+		<p><b>Evènements que {{ profile.user.username }} a organisé : </b></p>
+		{% for event in events_o %}
+			<div class="event_list_el">
+				<p><a href="{% url 'event_detail' pk=event.pk %}">{{ event.title }}</a></p>
+			</div>
+		{% endfor %}
+
+		
+
+{% endblock %}

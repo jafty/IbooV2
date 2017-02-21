@@ -30,9 +30,11 @@ class RegistrationForm(forms.Form):
 class UserProfileForm(forms.ModelForm):
 	class Meta:
 		model = UserProfile
-		fields = ('profession', 'age', 'numero', 'description')
+		fields = ('profile_pic_url', 'profession', 'age', 'numero', 'description')
 		
 		labels = {
+			
+			'profile_pic_url': _('Avatar (url)'),
 			'profession': _('Profession'),
 			'age': _('Âge'),
 			'numero': _('Numéro'),

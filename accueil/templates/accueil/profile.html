@@ -10,7 +10,12 @@
 		<p>Numéro : {{ user_profile.numero }}</p>
 		<p>Profession : {{ user_profile.profession }}</p>
 		
-
+		<p><b>Mes évènements</b></p>
+		{% for e in events_o %}
+			<div class="event_block">
+				<p><a href="{% url 'my_event' pk=e.pk %}">{{ e.title }}</a></p>
+			</div>
+		{% endfor %}
 		<p><a href="/edit_profile">Editer votre profil</a></p>
 		
     </div>

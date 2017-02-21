@@ -1,9 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from django.utils import timezone
 from .models import UserProfile 
+from events.models import Event
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
-from .forms import RegistrationForm
+from .forms import RegistrationForm, UserProfileForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -34,8 +35,10 @@ def confirm(request):
 	return render(request, 'accueil/confirm.html')
 	
 def profile(request):
-	user_profile = UserProfile.objects.filter(user=request.user)
-	return render(request, 'accueil/profile.html', {'user_profile':user_profile})
+	user_profile = UserProfile.objects.get(user=request.user)
+	events_o = Event.objects.filter(author=request.user)
+	
+	return render(request, 'accueil/profile.html', {'user_profile':user_profile, 'events_o':events_o})
 	
 
 def edit_profile(request):	
@@ -43,15 +46,15 @@ def edit_profile(request):
 
 # at least one object satisfying query exists
 
-	userProfileObject = UserProfile.objects.get(user=me)
+	profile = UserProfile.objects.get(user=me)
 	if request.method == "POST":
-		form = UserProfileForm(request.POST)
+		form = UserProfileForm(request.POST, instance=profile)
 		if form.is_valid():
 			profile = form.save(commit=False)
 			profile.save()
 			return HttpResponseRedirect(reverse('profile'))
 	else:
-		form = UserProfileForm()
+		form = UserProfileForm(instance=profile)
 	return render(request, 'accueil/edit_profile.html', {'form':form})
 
  

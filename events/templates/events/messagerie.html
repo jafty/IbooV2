@@ -1,0 +1,19 @@
+{% extends 'accueil/base.html' %}
+	{% block content %}
+		{% for m in messages %}
+		<div class="block">
+			{% if m.type == 'DM' %}
+				<h3><a href="{% url 'public_profile' username=m.sender.username %}">{{ m.sender.username }}</a> souhaite participer à l'évènement {{ m.event.title }}</h3>
+				<p>{{ m.msg_content }}</p>
+				<p><a href="{% url 'accept' cand=m.sender.username pk=m.event.pk %}">Accepter</a></p> 
+				<p><a href="{% url 'refuse' cand=m.sender.username pk=m.event.pk %}">Refuser</a></p> 
+			{% elif m.type == 'AC' %}
+				<h3><a href="{% url 'public_profile' username=m.sender.username %}">{{ m.sender.username }}</a> a accepté votre demande pour {{ m.event.title }}</h3>
+				<p><a href="{% url 'enter_event' pk=m.event.pk %}">Payez ici</a></p>
+			{% else %}
+				<h3><a href="{% url 'public_profile' username=m.sender.username %}">{{ m.sender.username }}</a> a refusé votre demande pour {{ m.event.title }}</h3>
+			{% endif %}
+		</div>			
+		{% endfor %}
+
+	{% endblock content %}

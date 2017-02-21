@@ -1,15 +1,14 @@
 {% extends 'accueil/base.html' %}
 
-{% block title %}Créez l'évènement !{% endblock %}
+
 
 {% block content %}
-  <h2>Créez l'évènement !</h2>
+  <h2>Modification de votre évènement</h2>
   <div class="bulle">
   <form method="post">
     {% csrf_token %}
     {{ form.as_p }}
     <button type="submit">Go !</button>
   </form>
-	</div>
- 
+ </div>
 {% endblock %}

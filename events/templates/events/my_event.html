@@ -6,19 +6,22 @@
 		<p><a href="{% url 'public_profile' username=event.author.username %}">Auteur : {{ event.author.username }}</a></p>
 
 		<p>Description : {{ event.description }}</p>
+		
 		<p>Numéro : {{ profile.numero }}</p>
 		<p>Mail : {{ event.author.email }}</p>
 		{% if event.drink %}
 			<p>Boissons fournies</p>
 		{% elif event.food %}
 			<p>Nourriture fournie</p>
-		{% endif %}		
-		{% if event.is_past_due %}
-			<p>L'évènement a déjà eu lieu.</p>
-		{% else %}
-			<p><a href="{% url 'demande' pk=event.pk %}">Participer !</a></p>
 		{% endif %}
-		
-		
+		<p><b>Participants :</b></p>
+		{% for l in list %}
+			<div class="participant_block">
+				
+				<p><a href="{% url 'public_profile' username=l.member.username %}">{{ l.member.username }}</a></p>
+			</div>
+		{% endfor %}
+		<p><a href="{% url 'edit_my_event' pk=event.pk %}">Editer l'évènement</a></p>
+		<p>Si vous souhaitez annuler cet évènement, veuillez contacter l'administrateur du site : japhet.situmonana@gmail.com</p>
 
 {% endblock %}
