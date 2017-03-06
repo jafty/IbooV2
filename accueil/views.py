@@ -16,6 +16,9 @@ from django.core.urlresolvers import reverse
 def index(request):
     return render(request, 'accueil/index.html')
 
+def mode_emploi(request):
+    return render(request, 'accueil/mode_emploi.html')
+
 def register(request):
 	if request.method == "POST":
 		form = RegistrationForm(request.POST)

@@ -10,11 +10,12 @@ class EventForm(forms.ModelForm):
 
     class Meta:
         model = Event
-        fields = ('title', 'description', 'address', 'drink', 'food', 'address')
+        fields = ('title', 'date', 'description', 'drink', 'food', 'address', 'price',)
 		
         labels = {
             'title': _('Nom de votre évènement'),
 			'date': _('Date (YYYY-MM-DD)'),
+			'price': _('Prix (en centimes)'),
 			'drink': _('Boissons ?'),
 			'food': _('Nourriture ?'),
             'description': _('Description'),

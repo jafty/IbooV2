@@ -1,14 +1,17 @@
 {% extends 'accueil/base.html' %}
+{% load app_filters %}
 	{% block content %}
+		<h2>Liste des événements</h2>
 		{% for event in events %}
+	
 			<div class="block">
 				<h2><a href="{% url 'event_detail' pk=event.pk %}">{{ event.title }}</a></h2>
-				<p>Prix : 5,99€</p>
+				<p>Prix : {{ event.price|div:100.0 }} €</p>
 				<p>Date : {{ event.date }}</p>
-				<p>Description : {{ event.description }}</p>
+				<p class="description">Description : {{ event.description }}</p>
 			</div>
 		{% endfor %}
-		<a href="{% url 'event_new' %}">Créer un évènement</a>
+		<a href="{% url 'event_new' %}" class="button">Créer un évènement</a>
 	{% endblock content %}
 	
 	

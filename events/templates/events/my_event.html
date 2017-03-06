@@ -21,7 +21,7 @@
 				<p><a href="{% url 'public_profile' username=l.member.username %}">{{ l.member.username }}</a></p>
 			</div>
 		{% endfor %}
-		<p><a href="{% url 'edit_my_event' pk=event.pk %}">Editer l'évènement</a></p>
+		<p><a href="{% url 'edit_my_event' pk=event.pk %}" class="button">Editer l'évènement</a></p>
 		<p>Si vous souhaitez annuler cet évènement, veuillez contacter l'administrateur du site : japhet.situmonana@gmail.com</p>
 
 {% endblock %}

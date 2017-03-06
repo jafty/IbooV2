@@ -23,17 +23,20 @@ stripe.api_key = "sk_test_umUV6AR8vWmm6HrkHnSFmPga "
 @login_required
 def charge(request, pk):
 	event = get_object_or_404(Event, pk=pk)
-	stripe.api_key =  "sk_test_umUV6AR8vWmm6HrkHnSFmPga " 
+	stripe.api_key =  "sk_test_umUV6AR8vWmm6HrkHnSFmPga" 
 	token = request.POST['stripeToken']
+	event_price = event.price
+	percentage = round(event_price*20/100)
+	
 
 	# Charge the user's card:
 	charge = stripe.Charge.create(
-		amount=599,
+		amount=event.price,
 		currency="eur",
 		description="Example charge",
 		source=token,
 		destination=event.stripe_user_id,
-		application_fee=199,
+		application_fee=percentage,
 	)
 	list=List.objects.get(member=request.user, event=event)
 	list.paid=True

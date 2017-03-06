@@ -1,4 +1,5 @@
 ﻿{% load staticfiles %}
+
 <!DOCTYPE html>
 
 <html>
@@ -9,7 +10,7 @@
 			@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 		</style> 
         <meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, maximum-scale=1.0, initial-scale=1.0, user-scalable=no" />
+		<meta name="viewport" content="width=device-width"/>
         <title>Iboo : Trouvez une soirée en un clic</title>
 		<link rel="stylesheet" type="text/css" href="{% static 'accueil/style.css' %}" />
     </head>
@@ -19,18 +20,20 @@
 		
 		<div class="wrapper">
 			<div id="nav">
-					<a href="/"><img src="http://i.imgur.com/lpk5qqp.png" height="35" alt="logo_iboo" id="logo" /></a>
+					<a href="/"><img src="http://i.imgur.com/Te5dEe8.png" height="35" alt="logo_iboo" id="logo" /></a>
 					 <ul>
 						
 
 						
 
 						{% if user.is_authenticated %}
+							<li><a href="/logout">Déconnexion</a></li>
+							
 							<li><a href="/events">Evènements</a></li> 
 
 							<li><a href="/profile">Profil</a></li> 
 							
-							<li><a href="/logout">Déconnexion</a></li>
+							
 							
 							<li><a href="/events/messagerie">Messagerie</a></li>
 						{% else %}
@@ -61,8 +64,9 @@
 			<div id='footer'>
 			
 			<p>Iboo : version bêta. Pour toute question ou toute suggestion, contacter l'administrateur : japhet.situmonana@gmail.com</p>
-			
+			<p><a href="{% url 'mode_emploi' %}">Mode d'emploi</a></p>
 			</div>
+			
 		</div>
     </body>
 

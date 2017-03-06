@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '8x$1mj9zvpkjwxz1&&xd%zjr84+rvi!ilip*2ws!1-=p-nvdng'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = []
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 	'events',
 	'payment',
 	'accueil',
+	'mathfilters',
 ]
 
 MIDDLEWARE = [

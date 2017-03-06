@@ -1,24 +1,27 @@
 {% extends 'accueil/base.html' %}
-
+{% load app_filters %}
 {% block content %}
-
-        <h2>{{ event.title }}</h2>
-		<p><a href="{% url 'public_profile' username=event.author.username %}">Auteur : {{ event.author.username }}</a></p>
-
-		<p>Description : {{ event.description }}</p>
-		<p>Numéro : {{ profile.numero }}</p>
-		<p>Mail : {{ event.author.email }}</p>
-		{% if event.drink %}
-			<p>Boissons fournies</p>
-		{% elif event.food %}
-			<p>Nourriture fournie</p>
-		{% endif %}		
-		{% if event.is_past_due %}
-			<p>L'évènement a déjà eu lieu.</p>
-		{% else %}
-			<p><a href="{% url 'demande' pk=event.pk %}">Participer !</a></p>
-		{% endif %}
-		
+		<div class="block">
+			<h2>{{ event.title }}</h2>
+			<p>{{ event.date }}</p>
+		</div>
+		<div class="bulle">
+			<p><a href="{% url 'public_profile' username=event.author.username %}">Auteur : {{ event.author.username }}</a></p>
+			<p>Prix : {{ event.price|div:100 }} €</p>
+			<p>Description : {{ event.description }}</p>
+			<p>Numéro : {{ profile.numero }}</p>
+			<p>Mail : {{ event.author.email }}</p>
+			{% if event.drink %}
+				<p>Boissons fournies</p>
+			{% elif event.food %}
+				<p>Nourriture fournie</p>
+			{% endif %}		
+			{% if event.is_past_due %}
+				<p>L'évènement a déjà eu lieu.</p>
+			{% else %}
+				<p><a href="{% url 'demande' pk=event.pk %}" class="button">Participer !</a></p>
+			{% endif %}
+		</div>
 		
 
 {% endblock %}

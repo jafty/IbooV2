@@ -8,6 +8,7 @@ from datetime import datetime, date
 class Event(models.Model):
 	author = models.ForeignKey('auth.User')
 	date = models.DateField(default=datetime.now)
+	price = models.IntegerField(default=0)
 	title = models.CharField(max_length=50)
 	description = models.TextField()
 	drink = models.BooleanField(default=False)

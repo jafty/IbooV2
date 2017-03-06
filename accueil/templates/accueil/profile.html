@@ -1,7 +1,7 @@
 {% extends 'accueil/base.html' %}
 
 {% block content %}
-    <div class="content1">
+    <div class="bulle">
         <h2>{{ user_profile.user.username }}</h2>
 		<p>Avatar :</p>
 		</p><img src="{{ user_profile.profile_pic_url }}" /></p>
@@ -12,11 +12,11 @@
 		
 		<p><b>Mes évènements</b></p>
 		{% for e in events_o %}
-			<div class="event_block">
+			<div class="block">
 				<p><a href="{% url 'my_event' pk=e.pk %}">{{ e.title }}</a></p>
 			</div>
 		{% endfor %}
-		<p><a href="/edit_profile">Editer votre profil</a></p>
+		<p><a href="/edit_profile" class="button">Editer votre profil</a></p>
 		
     </div>
 {% endblock %}
